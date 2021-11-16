@@ -22,6 +22,14 @@ namespace v2x
 
   void AutowareRosLogger::objectsCallback(const autoware_perception_msgs::msg::DynamicObjectArray::ConstSharedPtr msg)
   {
+    // if (msg->objects.size() > 0) {
+    //   for (auto obj : msg->objects) {
+
+    //   }
+    // } else {
+
+    // }
+    RCLCPP_INFO(get_logger(), "%d.%d,%d",msg->header.stamp.sec, msg->header.stamp.nanosec, static_cast<int>(msg->objects.size()));
   }
 }
 
