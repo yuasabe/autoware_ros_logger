@@ -3,7 +3,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
-#include "autoware_perception_msgs/msg/dynamic_object_array.hpp"
+#include "autoware_auto_perception_msgs/msg/predicted_objects.hpp"
 #include "tf2_msgs/msg/tf_message.hpp"
 
 namespace v2x
@@ -15,10 +15,9 @@ namespace v2x
 
   private:
     void objectsCallback(
-        const autoware_perception_msgs::msg::DynamicObjectArray::ConstSharedPtr msg);
+        const autoware_auto_perception_msgs::msg::PredictedObjects::ConstSharedPtr msg);
 
-    rclcpp::Subscription<autoware_perception_msgs::msg::DynamicObjectArray>::SharedPtr subscription_;
-    // rclcpp::Publisher<autoware_perception_msgs::msg::DynamicObjectArray>::SharedPtr publisher_;
+    rclcpp::Subscription<autoware_auto_perception_msgs::msg::PredictedObjects>::SharedPtr subscription_;
   };
 }
 
